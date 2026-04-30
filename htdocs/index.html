@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ArenaPro | Jogue como profissional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="../imgs/icon.png">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+
+    <a href="./html/pgini.html" class="logo-fixa">
+        <img src="./imgs/Logo-nova.png" alt="Logo">
+    </a>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div></div> <!-- espaço vazio (lado esquerdo) -->
+
+        <nav class="nav-menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#estrutura">Estrutura</a>
+            <a href="#depoimentos">Avaliações</a>
+            <a href="#" onclick="abrirModal()">Contato</a>
+        </nav>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- HERO (AGORA MATADOR) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Jogue em arenas profissionais</h1>
+            <p>Reserve em segundos e viva a experiência de um jogo de alto nível.</p>
+
+            <div class="hero-buttons">
+                <a href="./html/pgini.html" class="btn-primary">Reservar agora →</a>
+                <a href="#sobre" class="btn-secondary">Ver mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS RÁPIDOS -->
+    <section class="benefits">
+        <div class="benefit">⚡ Reserva rápida</div>
+        <div class="benefit">🌙 Jogos noturnos</div>
+        <div class="benefit">🏟️ Estrutura profissional</div>
+        <div class="benefit">🔒 Segurança total</div>
+    </section>
+
+    <!-- SEÇÃO ESCADA -->
+    <section class="escada">
+
+        <div class="step" id="sobre">
+            <div class="text">
+                <h2>Alto nível de jogo</h2>
+                <p>
+                    Arenas com iluminação profissional, gramado impecável
+                    e ambiente perfeito para partidas intensas.
+                </p>
+            </div>
+            <div class="image">
+                <img src="./imgs/download (1).jpg">
+            </div>
+        </div>
+
+        <div class="step right" id="estrutura">
+            <div class="text">
+                <h2>Estrutura completa</h2>
+                <p>
+                    Vestiários, arquibancada, estacionamento e segurança 24h.
+                    Tudo pensado para sua experiência.
+                </p>
+            </div>
+            <div class="image">
+                <img src="./imgs/download (2).jpg">
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="text">
+                <h2>Reserve em minutos</h2>
+                <p>
+                    Sistema simples e rápido. Escolha horário e confirme em poucos cliques.
+                </p>
+            </div>
+            <div class="image">
+                <img src="./imgs/download (3).jpg">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos" id="depoimentos">
+
+        <div class="depo-card">
+            ⭐⭐⭐⭐⭐
+            <p>“A melhor arena que já jogamos!”</p>
+            <span>— Carlos Mendes</span>
+        </div>
+
+        <div class="depo-card">
+            ⭐⭐⭐⭐⭐
+            <p>“Estrutura impecável e atendimento top.”</p>
+            <span>— Juliana Rocha</span>
+        </div>
+
+        <div class="depo-card">
+            ⭐⭐⭐⭐⭐
+            <p>“Perfeito pra jogar à noite.”</p>
+            <span>— Rafael Lima</span>
+        </div>
+
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <h2>Pronto pra jogar?</h2>
+        <p>Garanta seu horário agora e entre em campo.</p>
+        <a href="./html/pgini.html" class="btn-primary grande">Reservar agora</a>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal" id="modalContato">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">×</span>
+            <h2>Fale com a gente</h2>
+            <p>Escaneie para falar no WhatsApp</p>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+    <!-- BOTÃO FLUTUANTE -->
+    <a href="./html/pgini.html" class="floating-btn">
+        Reservar
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ArenaPro</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        /* =========================
+           MENU MOBILE
+        ========================= */
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".nav-menu");
+
+        if (toggle && menu) {
+            toggle.addEventListener("click", () => {
+                toggle.classList.toggle("active");
+                menu.classList.toggle("active");
+            });
+        }
+
+        /* =========================
+           NAVBAR SCROLL
+        ========================= */
+        const navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scroll");
+            } else {
+                navbar.classList.remove("scroll");
+            }
+        });
+
+        /* =========================
+           ANIMAÇÃO AO SCROLL
+        ========================= */
+        const elements = document.querySelectorAll(
+            ".step, .depo-card, .hero-content, .benefit, .cta-final"
+        );
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        elements.forEach(el => observer.observe(el));
+
+        /* =========================
+           MODAL (CORRIGIDO)
+        ========================= */
+        const modal = document.getElementById("modalContato");
+
+        function abrirModal() {
+            modal.classList.add("ativo");
+        }
+
+        function fecharModal() {
+            modal.classList.remove("ativo");
+        }
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                fecharModal();
+            }
+        });
+
+        /* =========================
+           QR CODE
+        ========================= */
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://wa.me/5588999998888",
+            width: 180,
+            height: 180
+        });
+
+        /* =========================
+           SCROLL SUAVE
+        ========================= */
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute("href"));
+
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        /* =========================
+           BOTÃO FLUTUANTE (APARECE)
+        ========================= */
+        const floatBtn = document.querySelector(".floating-btn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                floatBtn.style.opacity = "1";
+                floatBtn.style.pointerEvents = "all";
+            } else {
+                floatBtn.style.opacity = "0";
+                floatBtn.style.pointerEvents = "none";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
