@@ -26,7 +26,7 @@ $result = $conn->query($sql);
             <li><a href="../php/listar_reserva.php?status=Pendente">Pendentes</a></li>
             <li><a href="../php/listar_reserva.php?status=Aprovada">Aprovadas</a></li>
             <li><a href="../php/listar_reserva.php?status=Recusada">Recusadas</a></li>
-            <li><a href="../php/listar_reserva.php?status=Paga">Pagas</a></li>
+            <li><a href="../php/listar_reserva.php?status=Pago">Pagas</a></li>
         </ul>
 
         <div class="sidebar-footer">

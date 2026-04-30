@@ -1,42 +1,40 @@
 html {
   font-size: 16px;
-  zoom: 1;
 }
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.473)),
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
     url(../imgs/pattern.jpg) center/cover no-repeat;
   color: white;
   width: 100%;
   overflow-x: hidden;
 }
 
+/* LAYOUT */
 .container {
   display: flex;
   min-height: 100vh;
 }
 
+/* SIDEBAR */
 .sidebar {
   width: 260px;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
+  background: #ffffff;
   padding: 30px 20px;
-  border-right: 2px solid rgba(255,255,255,0.15);
+  border-right: 1px solid rgba(0,0,0,0.08);
   position: fixed;
   height: 100vh;
-  left: 0;
-  top: 0;
 }
 
 .sidebar h2 {
   text-align: center;
   letter-spacing: 3px;
   margin-bottom: 40px;
-  font-size: 28px;
-  color: #9ae447;
+  font-size: 26px;
+  color: #2e7d32;
 }
 
 .sidebar ul {
@@ -45,41 +43,40 @@ body {
 }
 
 .sidebar li {
-  margin: 20px 0;
+  margin: 18px 0;
 }
 
 .sidebar a {
   text-decoration: none;
-  color: white;
+  color: #333;
   padding: 12px 15px;
   display: block;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: 0.3s ease;
-  letter-spacing: 1px;
-  border: 1px solid transparent;
 }
 
 .sidebar a:hover {
-  background: linear-gradient(90deg, #2d9734, #43A047);
+  background: linear-gradient(90deg, #2e7d32, #43A047);
+  color: white;
   transform: translateX(5px);
-  border: 1px solid rgba(255,255,255,0.2);
 }
 
+/* CONTEÚDO */
 .content {
   margin-left: 280px;
   flex: 1;
   padding: 50px;
 }
 
-
 .content h1 {
-  font-size: 40px;
-  letter-spacing: 4px;
+  font-size: 38px;
+  letter-spacing: 3px;
   margin-bottom: 40px;
   border-left: 6px solid #43A047;
   padding-left: 20px;
 }
 
+/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -87,88 +84,81 @@ body {
 }
 
 .card {
-  background: rgba(0,0,0,0.75);
-  padding: 30px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.15);
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.08);
   transition: 0.35s ease;
-  position: relative;
-  overflow: hidden;
-  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 15px;
-  border: 1px solid rgba(255,255,255,0.08);
-  pointer-events: none;
-}
-
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card p {
-  font-size: 18px;
-  letter-spacing: 1px;
+  font-size: 17px;
+  color: #333;
 }
 
+/* STATUS */
 .status-badge {
   display: inline-block;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 10px;
-  letter-spacing: 1px;
   font-weight: bold;
 }
 
+/* cores status */
 .badge-pendente {
   background: #facc15;
   color: black;
-  box-shadow: 0 0 12px #facc15;
 }
 
 .badge-aprovada {
   background: #22c55e;
   color: white;
-  box-shadow: 0 0 12px #22c55e;
 }
 
 .badge-recusada {
   background: #ef4444;
   color: white;
-  box-shadow: 0 0 12px #ef4444;
 }
 
-.badge-em-análise {
-  background: #3b82f6;
+.badge-pago {
+  background: #1e88e5;
   color: white;
+  box-shadow: 0 0 10px rgba(30,136,229,0.4);
 }
 
+.card-pago {
+  border-left: 5px solid #1e88e5;
+}
+
+/* BOTÃO */
 .btn {
-  display: inline-block;
   margin-top: 20px;
   padding: 10px 18px;
-  background: linear-gradient(90deg, #2d9734, #43A047);
+  background: linear-gradient(90deg, #2e7d32, #43A047);
   color: white;
   text-decoration: none;
   border-radius: 8px;
   letter-spacing: 2px;
-  transition: 0.3s ease;
   text-align: center;
+  transition: 0.3s ease;
 }
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+/* FOOTER SIDEBAR */
 .sidebar-footer {
   margin-top: auto;
   padding-top: 30px;
@@ -182,13 +172,11 @@ body {
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 2px;
-  color: #9ae447;
-  border: 1px solid rgba(154, 228, 71, 0.4);
-  background: transparent;
+  color: #2e7d32;
+  border: 1px solid rgba(46,125,50,0.3);
   transition: 0.3s ease;
 }
 
 .btn-voltar:hover {
-  background: rgba(154, 228, 71, 0.1);
-  transform: translateX(-3px);
+  background: rgba(46,125,50,0.1);
 }

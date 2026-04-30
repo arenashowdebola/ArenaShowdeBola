@@ -1,13 +1,18 @@
 <?php
 include("conexão.php");
 
-$status = $_GET['status'] ?? 'Pendente';
+$status = $_GET['status'] ?? null;
 
-$sql = "SELECT * FROM reserva WHERE stattus = ? ORDER BY id DESC";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $status);
-$stmt->execute();
-$result = $stmt->get_result();
+if ($status) {
+    $sql = "SELECT * FROM reserva WHERE stattus = ? ORDER BY id DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $status);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    $sql = "SELECT * FROM reserva ORDER BY id DESC";
+    $result = $conn->query($sql);
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +37,7 @@ $result = $stmt->get_result();
             <li><a href="listar_reserva.php?status=Pendente">Pendentes</a></li>
             <li><a href="listar_reserva.php?status=Aprovada">Aprovadas</a></li>
             <li><a href="listar_reserva.php?status=Recusada">Recusadas</a></li>
-            <li><a href="listar_reserva.php?status=Pagas">Pagas</a></li>
+            <li><a href="listar_reserva.php?status=Pago">Pagas</a></li>
         </ul>
 
         <div class="sidebar-footer">

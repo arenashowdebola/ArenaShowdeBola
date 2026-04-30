@@ -3,25 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ArenaPro | Jogue como profissional</title>
+    <title>ArenaShow | Jogue como profissional</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../imgs/icon.png">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
 
-    <a href="./html/pgini.html" class="logo-fixa">
+    <a href="index.html" class="logo-fixa">
         <img src="./imgs/Logo-nova.png" alt="Logo">
     </a>
 
-    <!-- NAVBAR -->
+
     <header class="navbar">
 
-        <div></div> <!-- espaço vazio (lado esquerdo) -->
+        <div></div> 
 
         <nav class="nav-menu">
             <a href="#sobre">Sobre</a>
@@ -37,20 +37,20 @@
         </div>
     </header>
 
-    <!-- HERO (AGORA MATADOR) -->
+
     <section class="hero">
         <div class="hero-content">
             <h1>Jogue em arenas profissionais</h1>
             <p>Reserve em segundos e viva a experiência de um jogo de alto nível.</p>
 
             <div class="hero-buttons">
-                <a href="./html/pgini.html" class="btn-primary">Reservar agora →</a>
+                <a href="../html/pgini.html" class="btn-primary">Reservar agora →</a>
                 <a href="#sobre" class="btn-secondary">Ver mais</a>
             </div>
         </div>
     </section>
 
-    <!-- BENEFÍCIOS RÁPIDOS -->
+ 
     <section class="benefits">
         <div class="benefit">⚡ Reserva rápida</div>
         <div class="benefit">🌙 Jogos noturnos</div>
@@ -58,7 +58,7 @@
         <div class="benefit">🔒 Segurança total</div>
     </section>
 
-    <!-- SEÇÃO ESCADA -->
+
     <section class="escada">
 
         <div class="step" id="sobre">
@@ -101,7 +101,7 @@
 
     </section>
 
-    <!-- DEPOIMENTOS -->
+
     <section class="depoimentos" id="depoimentos">
 
         <div class="depo-card">
@@ -124,7 +124,7 @@
 
     </section>
 
-    <!-- CTA FINAL -->
+ 
     <section class="cta-final">
         <h2>Pronto pra jogar?</h2>
         <p>Garanta seu horário agora e entre em campo.</p>
@@ -141,21 +141,19 @@
         </div>
     </div>
 
-    <!-- BOTÃO FLUTUANTE -->
+
     <a href="./html/pgini.html" class="floating-btn">
         Reservar
     </a>
 
-    <!-- FOOTER -->
+
     <footer>
         <p>© 2026 ArenaPro</p>
     </footer>
 
-    <!-- SCRIPT -->
+
     <script>
-        /* =========================
-           MENU MOBILE
-        ========================= */
+
         const toggle = document.querySelector(".menu-toggle");
         const menu = document.querySelector(".nav-menu");
 
@@ -166,9 +164,7 @@
             });
         }
 
-        /* =========================
-           NAVBAR SCROLL
-        ========================= */
+
         const navbar = document.querySelector(".navbar");
 
         window.addEventListener("scroll", () => {
@@ -179,9 +175,7 @@
             }
         });
 
-        /* =========================
-           ANIMAÇÃO AO SCROLL
-        ========================= */
+
         const elements = document.querySelectorAll(
             ".step, .depo-card, .hero-content, .benefit, .cta-final"
         );
@@ -198,9 +192,7 @@
 
         elements.forEach(el => observer.observe(el));
 
-        /* =========================
-           MODAL (CORRIGIDO)
-        ========================= */
+
         const modal = document.getElementById("modalContato");
 
         function abrirModal() {
@@ -217,9 +209,7 @@
             }
         });
 
-        /* =========================
-           QR CODE
-        ========================= */
+
         new QRCode(document.getElementById("qrcode"), {
             text: "https://wa.me/5588999998888",
             width: 180,
@@ -243,9 +233,7 @@
             });
         });
 
-        /* =========================
-           BOTÃO FLUTUANTE (APARECE)
-        ========================= */
+
         const floatBtn = document.querySelector(".floating-btn");
 
         window.addEventListener("scroll", () => {
