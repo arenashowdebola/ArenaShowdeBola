@@ -1,111 +1,143 @@
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: 
-    linear-gradient(rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.473)),
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
     url(../imgs/pattern.jpg) center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    min-height: 100vh;
-    
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+}
 
-  .container {
-    background-color: rgb(255, 255, 255);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    width: 400px;
-    text-align: center;
-    position: relative;
-  }
+/* CONTAINER */
+.container {
+  background-color: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  width: 420px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s ease;
+}
 
-  .container::after {
-    content: "";
-    position: absolute;
+.container:hover {
+  transform: translateY(-5px);
+}
 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 8px;
+/* BARRA SUPERIOR */
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #2e7d32, #43A047, #66bb6a);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
 
-    background: linear-gradient(
-      to right,
-      #43A047, 
-      #9ae447,
-      #2d9734
-    );
+/* TITULO */
+h2 {
+  color: #2e7d32;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
 
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-  }
-  
-  h2 {
-    color: black;
-    margin-bottom: 20px;
-  }
-  
-  .button-link {
-    display: block;
-    background: linear-gradient(to bottom, rgb(95, 224, 95), rgb(44, 161, 44));
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    font-weight: bold;
-    text-align: center;
-    transition: background 0.7s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
+/* BOTÃO BASE */
+.button-link,
+.button-linkA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-  .button-link:hover {
-    background: linear-gradient(to bottom right, rgb(96, 207, 96),  rgb(52, 207, 52));
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
+  padding: 14px;
+  margin: 10px 0;
 
-  .button-linkA {
-    display: block;
-    background: white;
-    color: #14532d;
-    text-decoration: none;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    font-weight: bold;
-    text-align: center;
-    transition: background 0.7s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 1px solid #14532d;
-  }
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
 
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
-  .button-linkA:hover {
-    background: linear-gradient(to bottom right, rgb(96, 207, 96),  rgb(52, 207, 52));
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border: none;
-  }
+/* BOTÃO CLIENTE (PRINCIPAL) */
+.button-link {
+  background: linear-gradient(to bottom, #43A047, #2e7d32);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
-  .voltar {
-    margin-top: 20px;
-    display: block;
-    text-decoration: none;
-    color: #1e3d59;
-  }
-  
-  .voltar:hover {
-    text-decoration: underline;
-  }
+.button-link:hover {
+  background: linear-gradient(to bottom right, #66bb6a, #43A047);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-  .menu-float {
+.button-link:active {
+  transform: scale(0.97);
+}
+
+.button-linkA {
+  background: #f1f8f4; /* verde MUITO suave (quase branco) */
+  color: #2e7d32;
+  border: 1px solid rgba(46,125,50,0.4); /* borda mais suave */
+}
+
+.button-linkA:hover {
+  background: #e6f4ea; /* leve mudança, nada gritante */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.button-linkA:active {
+  transform: scale(0.97);
+}
+
+/* ÍCONES */
+.button-link i,
+.button-linkA i {
+  transition: 0.3s ease;
+}
+
+.button-link:hover i,
+.button-linkA:hover i {
+  transform: scale(1.15);
+}
+
+/* TEXTO INFO */
+.info-itemGg {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  color: #333;
+  font-size: 14px;
+}
+
+.info-itemGg i {
+  color: #2e7d32;
+}
+
+/* MENU FLOAT */
+.menu-float {
   position: fixed;
   top: 25px;
   left: 25px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  color: #14532d;
+  color: #2e7d32;
   background: #ffffff;
   font-size: 26px;
   border: none;
@@ -115,37 +147,48 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition: 0.3s ease;
 }
 
 .menu-float:hover {
-  background: rgba(199, 193, 193, 0.808);
-  transform: scale(1.08);
+  background: #e8f5e9;
+  transform: scale(1.1);
 }
 
 .menu-float:active {
   transform: scale(0.95);
 }
 
-.info-itemG i {
-  color: #14532d;
-
+/* ANIMAÇÃO CONTAINER */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.info-itemB i {
-  color: #ffffff;
-
+/* ANIMAÇÃO FUNDO */
+@keyframes fadeBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.info-itemGg {
-  display: flex;          
-  align-items: center;   
-  justify-content: center;
-  gap: 5px;            
-  text-align: center;
+/* aplica no body */
+body {
+  animation: fadeBg 0.8s ease;
 }
 
-.info-itemGg i {
-  color: #14532d;
-  width: 20px;            
+/* aplica no container */
+.container {
+  animation: fadeUp 0.6s ease forwards;
 }
+
+/* delays */
+.container h2 { animation-delay: 0.2s; }
+.button-link { animation-delay: 0.3s; }
+.button-linkA { animation-delay: 0.4s; }
+.info-itemGg { animation-delay: 0.5s; }
