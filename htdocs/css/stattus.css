@@ -1,0 +1,245 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.55)),
+    url(../imgs/pattern.jpg) center/cover no-repeat;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* CONTAINER */
+.form-box {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* GRID */
+.grid-reservas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* CARD */
+.card {
+  background: #fdfefd;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  position: relative;
+  transition: 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(46,125,50,0.1);
+}
+
+/* brilho sutil */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* barra topo */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #43A047, #9ae447, #2d9734);
+}
+
+/* hover */
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* CAMPOS */
+.card p {
+  margin: 0;
+  padding: 13px 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+
+  background: rgba(102, 187, 106, 0.12);
+  border-left: 4px solid #43A047;
+
+  color: #1b5e20;
+  transition: 0.25s;
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(67,160,71,0.08);
+}
+
+/* espaçamento */
+.card p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* hover campos */
+.card p:hover {
+  background: rgba(102, 187, 106, 0.22);
+  transform: translateX(4px);
+}
+
+/* TEXTO */
+.card strong {
+  color: #1b5e20;
+  font-weight: 600;
+}
+
+.card span {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+/* linha decorativa */
+.card p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #43A047, transparent);
+  opacity: 0.2;
+}
+
+/* TÍTULO */
+h2 {
+  color: #ffffff;
+  margin: 10px 0;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* BOTÃO FLOAT */
+.menu-float {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: #14532d;
+  background: #ffffff;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+.menu-float:hover {
+  transform: scale(1.1) rotate(8deg);
+  background: #e8f5e9;
+}
+
+/* STATUS */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* STATUS CORES */
+.status-badge.aprovada {
+  background: #00e676;
+  color: #003b1f;
+}
+
+.status-badge.pendente {
+  background: #ffd600;
+  color: #5c4700;
+}
+
+.status-badge.recusada {
+  background: #ff5252;
+  color: #4a0000;
+}
+
+.btn-pagar {
+  display: block;
+  width: calc(100% - 30px);
+  margin: 15px auto 5px auto;
+  padding: 14px;
+
+  background: linear-gradient(135deg, #43A047, #2d9734);
+  color: white;
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-align: center;
+
+  border-radius: 12px;
+  cursor: pointer;
+
+  box-shadow: 0 8px 22px rgba(67,160,71,0.35);
+  transition: 0.25s ease;
+}
+
+/* hover */
+.btn-pagar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(67,160,71,0.5);
+}
+
+/* clique */
+.btn-pagar:active {
+  transform: scale(0.98);
+}
+
+/* foco */
+.btn-pagar:focus {
+  outline: 2px solid #81c784;
+  outline-offset: 3px;
+}
+
+/* TOPO DO CARD */
+.card-topo {
+  margin-bottom: 15px;
+}
+
+.horario {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+.data {
+  font-size: 13px;
+  color: #2e7d32;
+  opacity: 0.8;
+  margin-top: 3px;
+}
+
+/* AJUSTE NAS INFOS */
+.card-info p {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(102,187,106,0.12);
+  display: flex;
+  justify-content: space-between;
+}

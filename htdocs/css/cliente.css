@@ -1,0 +1,370 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.45)), url("../imgs/pattern.jpg") center/cover no-repeat;
+}
+
+/* CONTAINER */
+.form-box {
+  width: 620px;
+  padding: 50px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.form-box::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.form-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.08), transparent);
+}
+
+/* TÍTULO */
+h2 {
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2e7d32;
+  border-left: 5px solid #43A047;
+  padding-left: 15px;
+  margin-bottom: 40px;
+}
+
+/* LABEL */
+.form-box label {
+  font-weight: 600;
+  display: block;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-top: 25px;
+  color: #333;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 8px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  color: #222;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid #43A047;
+  box-shadow: 0 5px 10px rgba(67,160,71,0.15);
+}
+
+/* BOTÃO */
+.btn {
+  margin-top: 35px;
+  padding: 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #2d9734, #43A047);
+  border: none;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* MENU FLOAT */
+.menu-float {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2e7d32, #43A047);
+  color: white;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+.menu-float:hover {
+  background: white;
+  color: #2e7d32;
+  transform: scale(1.1) rotate(8deg);
+}
+
+/* GRADE DE HORÁRIOS */
+#gradeHorarios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* BASE */
+.horario {
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid transparent;
+  transition: 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* DISPONÍVEL */
+.disponivel {
+  border: 2px solid #66bb6a;
+  color: #2e7d32;
+}
+
+.disponivel:hover {
+  background: rgba(102,187,106,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102,187,106,0.2);
+}
+
+/* SELECIONADO */
+.selecionado {
+  background: linear-gradient(135deg, #66bb6a, #43A047);
+  color: white;
+  border: 2px solid #43A047;
+  box-shadow: 0 6px 18px rgba(67,160,71,0.4);
+  transform: scale(1.05);
+}
+
+/* OCUPADO */
+.ocupado {
+  border: 2px solid #ef5350;
+  color: #ef5350;
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: rgba(239,83,80,0.08);
+}
+
+/* TEXTO INFO */
+.horarios-info {
+  margin-top: 12px;
+  color: #d32f2f;
+  font-size: 13px;
+}
+
+/* BOTÃO VER HORÁRIOS */
+#btnVerHorarios {
+  margin-top: 15px;
+  background: #43A047;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+  transition: 0.2s;
+}
+
+#btnVerHorarios:hover {
+  background: #2e7d32;
+  transform: translateY(-1px);
+}
+
+/* SUCESSO */
+.sucesso-box {
+  text-align: center;
+}
+
+.sucesso-texto {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ID BOX */
+.id-box {
+  background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+.id-box h1 {
+  font-size: 46px;
+  color: #2e7d32;
+  margin: 10px 0;
+  letter-spacing: 4px;
+}
+
+.id-box span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* BOTÃO VOLTAR */
+.botao-voltar {
+  width: 100%;
+  background: linear-gradient(to right, #66bb6a, #43A047);
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.botao-voltar:hover {
+  background: linear-gradient(to right, #81c784, #4caf50);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* aplica no container principal */
+.form-box {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* fundo aparecendo suave */
+body {
+  animation: fadeBg 0.8s ease;
+}
+
+@keyframes fadeBg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form-box label,
+.form-box input,
+.btn {
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.form-box label:nth-of-type(1) { animation-delay: 0.2s; }
+.form-box label:nth-of-type(2) { animation-delay: 0.3s; }
+.form-box label:nth-of-type(3) { animation-delay: 0.4s; }
+
+.form-box input:nth-of-type(1) { animation-delay: 0.25s; }
+.form-box input:nth-of-type(2) { animation-delay: 0.35s; }
+.form-box input:nth-of-type(3) { animation-delay: 0.45s; }
+
+.btn {
+  animation-delay: 0.6s;
+}
+
+#blocoHorarios {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-25px) scale(0.97);
+  transition: 
+    max-height 2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+#blocoHorarios.ativo {
+  max-height: 700px;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  margin-top: 15px;
+}
+
+.status {
+  margin-top: 15px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 15px; /* 🔥 maior */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+
+  animation: aparecerStatus 0.4s ease;
+}
+
+/* SUCESSO */
+.status.sucesso {
+  background: rgba(102,187,106,0.15);
+  color: #2e7d32;
+  border-left: 5px solid #43A047;
+  box-shadow: 0 4px 12px rgba(102,187,106,0.2);
+}
+
+/* ERRO */
+.status.erro {
+  background: rgba(239,83,80,0.15);
+  color: #c62828;
+  border-left: 5px solid #ef5350;
+  box-shadow: 0 4px 12px rgba(239,83,80,0.2);
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecerStatus {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

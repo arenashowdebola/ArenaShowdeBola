@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva da Arena</title>
+  <link rel="stylesheet" href="../css/cliente.css">
+  <link rel="icon" href="../imgs/icon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="form-box">
+
+    <h2>Reservar Horário</h2>
+
+    <form action="../php/reservar.php" method="POST" enctype="multipart/form-data">
+
+      <input type="text" name="nome" placeholder="Nome" required>
+
+      <input type="text" name="dataR" id="data" placeholder="Selecione a data" required>
+
+      <button type="button" id="btnVerHorarios">Ver horários disponíveis</button>
+
+      <div id="blocoHorarios">
+        <div id="gradeHorarios"></div>
+      </div>
+        
+      <div id="infoHorarios" class="horarios-info"></div>
+
+      <input type="hidden" name="horaI" id="hora1">
+      <input type="hidden" name="horaT" id="hora2">
+
+      <input type="submit" class="btn" value="Confirmar">
+
+    </form>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="../js/horarios.js"></script>
+
+</body>
+</html>
