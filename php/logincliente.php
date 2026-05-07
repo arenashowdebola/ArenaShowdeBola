@@ -2,7 +2,6 @@
 session_start();
 include 'conexão.php';
 
-// 🔐 VALIDAÇÃO DO CÓDIGO
 if (isset($_POST['codigo'])) {
 
     session_start();
@@ -28,7 +27,6 @@ if (isset($_POST['codigo'])) {
 
         $_SESSION['verificado'] = true;
 
-        // 👉 AQUI acontece o que você quer
         header("Location: ../html/cliente.html");
         exit;
 

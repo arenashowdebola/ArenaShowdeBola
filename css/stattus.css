@@ -7,14 +7,12 @@ body {
   min-height: 100vh;
 }
 
-/* CONTAINER */
 .form-box {
   padding: 40px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-/* GRID */
 .grid-reservas {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -22,7 +20,6 @@ body {
   margin-top: 25px;
 }
 
-/* CARD */
 .card {
   background: #fdfefd;
   padding: 22px;
@@ -34,7 +31,6 @@ body {
   border: 1px solid rgba(46,125,50,0.1);
 }
 
-/* brilho sutil */
 .card::before {
   content: "";
   position: absolute;
@@ -45,7 +41,6 @@ body {
   pointer-events: none;
 }
 
-/* barra topo */
 .card::after {
   content: "";
   position: absolute;
@@ -56,13 +51,11 @@ body {
   background: linear-gradient(to right, #43A047, #9ae447, #2d9734);
 }
 
-/* hover */
 .card:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
-/* CAMPOS */
 .card p {
   margin: 0;
   padding: 13px 15px;
@@ -81,18 +74,15 @@ body {
   box-shadow: inset 0 0 0 1px rgba(67,160,71,0.08);
 }
 
-/* espaçamento */
 .card p:not(:last-child) {
   margin-bottom: 10px;
 }
 
-/* hover campos */
 .card p:hover {
   background: rgba(102, 187, 106, 0.22);
   transform: translateX(4px);
 }
 
-/* TEXTO */
 .card strong {
   color: #1b5e20;
   font-weight: 600;
@@ -103,7 +93,6 @@ body {
   font-weight: 700;
 }
 
-/* linha decorativa */
 .card p::after {
   content: "";
   position: absolute;
@@ -115,7 +104,6 @@ body {
   opacity: 0.2;
 }
 
-/* TÍTULO */
 h2 {
   color: #ffffff;
   margin: 10px 0;
@@ -124,7 +112,6 @@ h2 {
   letter-spacing: 2px;
 }
 
-/* BOTÃO FLOAT */
 .menu-float {
   position: fixed;
   top: 25px;
@@ -150,7 +137,6 @@ h2 {
   background: #e8f5e9;
 }
 
-/* STATUS */
 .status-badge {
   padding: 6px 14px;
   border-radius: 20px;
@@ -161,7 +147,6 @@ h2 {
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
-/* STATUS CORES */
 .status-badge.aprovada {
   background: #00e676;
   color: #003b1f;
@@ -199,24 +184,20 @@ h2 {
   transition: 0.25s ease;
 }
 
-/* hover */
 .btn-pagar:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(67,160,71,0.5);
 }
 
-/* clique */
 .btn-pagar:active {
   transform: scale(0.98);
 }
 
-/* foco */
 .btn-pagar:focus {
   outline: 2px solid #81c784;
   outline-offset: 3px;
 }
 
-/* TOPO DO CARD */
 .card-topo {
   margin-bottom: 15px;
 }

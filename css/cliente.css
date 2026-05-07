@@ -8,7 +8,6 @@ body {
   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.45)), url("../imgs/pattern.jpg") center/cover no-repeat;
 }
 
-/* CONTAINER */
 .form-box {
   width: 620px;
   padding: 50px;
@@ -40,7 +39,6 @@ body {
   background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.08), transparent);
 }
 
-/* TÍTULO */
 h2 {
   font-size: 28px;
   letter-spacing: 3px;
@@ -51,7 +49,6 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* LABEL */
 .form-box label {
   font-weight: 600;
   display: block;
@@ -82,7 +79,6 @@ input:focus {
   box-shadow: 0 5px 10px rgba(67,160,71,0.15);
 }
 
-/* BOTÃO */
 .btn {
   margin-top: 35px;
   padding: 16px;
@@ -106,7 +102,6 @@ input:focus {
   transform: scale(0.97);
 }
 
-/* MENU FLOAT */
 .menu-float {
   position: fixed;
   top: 25px;
@@ -166,7 +161,6 @@ input:focus {
   box-shadow: 0 5px 15px rgba(102,187,106,0.2);
 }
 
-/* SELECIONADO */
 .selecionado {
   background: linear-gradient(135deg, #66bb6a, #43A047);
   color: white;
@@ -175,7 +169,6 @@ input:focus {
   transform: scale(1.05);
 }
 
-/* OCUPADO */
 .ocupado {
   border: 2px solid #ef5350;
   color: #ef5350;
@@ -184,14 +177,12 @@ input:focus {
   background: rgba(239,83,80,0.08);
 }
 
-/* TEXTO INFO */
 .horarios-info {
   margin-top: 12px;
   color: #d32f2f;
   font-size: 13px;
 }
 
-/* BOTÃO VER HORÁRIOS */
 #btnVerHorarios {
   margin-top: 15px;
   background: #43A047;
@@ -209,7 +200,6 @@ input:focus {
   transform: translateY(-1px);
 }
 
-/* SUCESSO */
 .sucesso-box {
   text-align: center;
 }
@@ -220,7 +210,6 @@ input:focus {
   color: #333;
 }
 
-/* ID BOX */
 .id-box {
   background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
   padding: 25px;
@@ -259,7 +248,6 @@ input:focus {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* ANIMAÇÃO DE ENTRADA */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -271,12 +259,10 @@ input:focus {
   }
 }
 
-/* aplica no container principal */
 .form-box {
   animation: fadeUp 0.6s ease forwards;
 }
 
-/* fundo aparecendo suave */
 body {
   animation: fadeBg 0.8s ease;
 }
@@ -349,7 +335,6 @@ body {
   box-shadow: 0 4px 12px rgba(102,187,106,0.2);
 }
 
-/* ERRO */
 .status.erro {
   background: rgba(239,83,80,0.15);
   color: #c62828;
@@ -357,7 +342,6 @@ body {
   box-shadow: 0 4px 12px rgba(239,83,80,0.2);
 }
 
-/* ANIMAÇÃO */
 @keyframes aparecerStatus {
   from {
     opacity: 0;

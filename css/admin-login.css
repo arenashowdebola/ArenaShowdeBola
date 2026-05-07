@@ -12,7 +12,6 @@ body {
   animation: fadeIn 0.7s ease;
 }
 
-/* ANIMAÇÃO */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -24,7 +23,6 @@ body {
   }
 }
 
-/* CONTAINER */
 .form-box {
   background-color: #ffffff;
   padding: 35px;
@@ -54,7 +52,6 @@ body {
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-/* BARRA TOP */
 .form-box::after {
   content: "";
   position: absolute;
@@ -74,14 +71,12 @@ body {
   border-top-right-radius: 14px;
 }
 
-/* TÍTULO */
 h2 {
   color: #1b5e20;
   margin-bottom: 25px;
   font-size: 22px;
 }
 
-/* LABEL */
 label {
   display: block;
   margin-top: 15px;
@@ -91,17 +86,16 @@ label {
   font-size: 14px;
 }
 
-/* INPUTS (CORRIGIDO) */
 input[type="email"],
 input[type="password"] {
-  width: 100%;                /* 🔥 corrigido */
+  width: 100%;              
   padding: 12px;
   margin-top: 6px;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-bottom: 12px;
 
-  box-sizing: border-box;     /* 🔥 ESSENCIAL */
+  box-sizing: border-box; 
   transition: 0.25s;
   outline: none;
 }
@@ -111,14 +105,12 @@ input:hover {
   border: 1px solid #43A047;
 }
 
-/* FOCUS (UX forte) */
 input:focus {
   border: 1px solid #43A047;
   box-shadow: 0 0 0 3px rgba(67,160,71,0.2);
   background: #f6fff7;
 }
 
-/* BOTÃO */
 .button-link {
   width: 100%;
   background: linear-gradient(135deg, #43A047, #2d9734);
@@ -145,7 +137,6 @@ input:focus {
   transform: scale(0.97);
 }
 
-/* LINK VOLTAR */
 .link-voltar {
   display: block;
   margin-top: 15px;
@@ -161,7 +152,6 @@ input:focus {
   text-decoration: underline;
 }
 
-/* BOTÃO VOLTAR */
 .menu-float {
   position: fixed;
   top: 25px;
@@ -192,7 +182,6 @@ input:focus {
   transform: scale(0.95);
 }
 
-/* ÍCONES */
 .info-itemG i {
   color: #14532d;
   width: 20px;

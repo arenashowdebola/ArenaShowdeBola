@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result->num_rows === 1) {
             $reserva = $result->fetch_assoc();
 
-            // Insere na tabela reservaconferidos
             $sqlInsere = "INSERT INTO reservaconferidos 
                 (id, nome, dataR, horaI, horaT, arquivoNome, stattus)
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -37,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             );
             $stmtInsere->execute();
 
-            // Deleta da tabela reserva
             $sqlDeleta = "DELETE FROM reserva WHERE id = ?";
             $stmtDeleta = $conn->prepare($sqlDeleta);
             $stmtDeleta->bind_param("i", $id);

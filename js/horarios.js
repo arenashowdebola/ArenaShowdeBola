@@ -12,28 +12,23 @@ let horarios = [];
 let ocupados = [];
 let selecionados = [];
 
-/* FLATPICKR */
 flatpickr("#data", {
     dateFormat: "Y-m-d",
     minDate: "today",
 });
 
-/* GERAR HORÁRIOS */
 for (let h = 8; h <= 22; h++) {
     horarios.push((h < 10 ? "0" : "") + h + ":00");
 }
 
-/* AO ESCOLHER DATA */
 dataInput.addEventListener("change", () => {
     btnVer.style.display = "block";
 
-    // 🔥 REMOVE display NONE
     blocoHorarios.classList.remove("ativo");
 
     limparSelecao();
 });
 
-/* BOTÃO VER HORÁRIOS */
 btnVer.addEventListener("click", () => {
     let data = dataInput.value;
 
@@ -47,7 +42,6 @@ btnVer.addEventListener("click", () => {
     .then(dados => {
         ocupados = dados;
 
-        // 🔥 AQUI ATIVA A ANIMAÇÃO
         blocoHorarios.classList.add("ativo");
 
         renderizar();
@@ -57,7 +51,6 @@ btnVer.addEventListener("click", () => {
     });
 });
 
-/* RENDERIZA HORÁRIOS */
 function renderizar() {
     grade.innerHTML = "";
 
@@ -77,7 +70,6 @@ function renderizar() {
     });
 }
 
-/* SELEÇÃO */
 function selecionar(el, hora) {
     if (selecionados.length === 0) {
         selecionados.push(hora);
@@ -114,7 +106,6 @@ function selecionar(el, hora) {
     }
 }
 
-/* PINTAR INTERVALO */
 function pintar(inicio, fim) {
     document.querySelectorAll(".horario").forEach(div => {
         let h = div.innerText;
@@ -124,13 +115,11 @@ function pintar(inicio, fim) {
     });
 }
 
-/* LIMPAR */
 function limparSelecao() {
     selecionados = [];
     document.querySelectorAll(".horario").forEach(d => d.classList.remove("selecionado"));
 }
 
-/* VERIFICAR CONFLITO */
 function verificarConflito() {
     let data = dataInput.value;
     let inicio = horaI.value;
@@ -148,3 +137,10 @@ function verificarConflito() {
 }
     });
 }
+
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", () => {
+  sessionStorage.setItem("reservaFeita", "true");
+});

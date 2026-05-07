@@ -1,9 +1,7 @@
-/* RESET */
 * {
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
   font-family: 'Montserrat', sans-serif;
   background: 
@@ -16,7 +14,6 @@ body {
   min-height: 100vh;
 }
 
-/* CONTAINER */
 .container {
   background-color: #ffffff;
   padding: 35px;
@@ -32,7 +29,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* BARRA SUPERIOR */
 .container::after {
   content: "";
   position: absolute;
@@ -45,14 +41,12 @@ body {
   border-top-right-radius: 14px;
 }
 
-/* TITULO */
 h2 {
   color: #2e7d32;
   margin-bottom: 25px;
   letter-spacing: 1px;
 }
 
-/* BOTÃO BASE */
 .button-link,
 .button-linkA {
   display: flex;
@@ -71,7 +65,6 @@ h2 {
   cursor: pointer;
 }
 
-/* BOTÃO CLIENTE (PRINCIPAL) */
 .button-link {
   background: linear-gradient(to bottom, #43A047, #2e7d32);
   color: white;
@@ -104,7 +97,6 @@ h2 {
   transform: scale(0.97);
 }
 
-/* ÍCONES */
 .button-link i,
 .button-linkA i {
   transition: 0.3s ease;
@@ -115,7 +107,6 @@ h2 {
   transform: scale(1.15);
 }
 
-/* TEXTO INFO */
 .info-itemGg {
   margin-top: 15px;
   display: flex;
@@ -129,7 +120,6 @@ h2 {
   color: #2e7d32;
 }
 
-/* MENU FLOAT */
 .menu-float {
   position: fixed;
   top: 25px;
@@ -159,7 +149,6 @@ h2 {
   transform: scale(0.95);
 }
 
-/* ANIMAÇÃO CONTAINER */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -171,23 +160,19 @@ h2 {
   }
 }
 
-/* ANIMAÇÃO FUNDO */
 @keyframes fadeBg {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* aplica no body */
 body {
   animation: fadeBg 0.8s ease;
 }
 
-/* aplica no container */
 .container {
   animation: fadeUp 0.6s ease forwards;
 }
 
-/* delays */
 .container h2 { animation-delay: 0.2s; }
 .button-link { animation-delay: 0.3s; }
 .button-linkA { animation-delay: 0.4s; }
