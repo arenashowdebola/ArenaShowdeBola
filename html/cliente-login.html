@@ -1,84 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login do Cliente - Arena Sports</title>
-  <link rel="stylesheet" href="../css/cliente-login.css" />
-  <link rel="icon" href="../imgs/icon.png" type="image/x-icon">
+
+  <title>Login Cliente</title>
+
+  <link rel="stylesheet" href="../css/cliente-login.css">
+  <link rel="icon" href="../imgs/icon.png">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></head>
-  <style>
-    .erro-quadro {
-      border: 2px solid #e63946;
-      background-color: #f8d7da;
-      color: #e63946;
-      padding: 12px 15px;
-      margin-bottom: 15px;
-      font-weight: bold;
-      border-radius: 6px;
-      text-align: center;
-      display: none;
-      box-sizing: border-box;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <div class="form-box">
-    <h2>Login Cliente</h2>
+  <div class="container">
 
-    <div id="msg-erro" class="erro-quadro"></div>
+    <!-- ESQUERDA -->
 
-    <form action="../php/logincliente.php" method="POST">
-      <div class="info-itemG">
-        <label for="email" class="email">
-          <i class="fa-regular fa-envelope"></i>
-          Email
-        </label>
-        <input type="email" id="email" name="email" required>
+    <div class="left-side">
+
+      <div class="left-content">
+
+        <h1>Bem-vindo</h1>
+
+        <p>
+          Faça login para acessar sua área do cliente e gerenciar suas reservas.
+        </p>
+
+        <img src="../imgs/Logo-nova.png" alt="Logo">
+
       </div>
-  
-      <div class="info-itemG">
-        <label for="senha"  class="senha">
-          <i class="fa-solid fa-lock"></i>
-          Senha
-        </label>
-        <input type="password" id="senha" name="senha" required>
-      </div> 
 
-      <button type="submit" class="button-link">Entrar</button>
-    </form>
+    </div>
+
+    <!-- DIREITA -->
+
+    <div class="right-side">
+
+      <div class="form-box">
+
+        <h2>Entrar</h2>
+        <span>Login Cliente</span>
+
+        <div id="msg-erro" class="erro-quadro"></div>
+
+        <form action="../php/logincliente.php" method="POST">
+
+          <div class="info-itemG">
+
+            <label for="email">
+              <i class="fa-regular fa-envelope"></i>
+              Email
+            </label>
+
+            <input type="email" id="email" name="email" required>
+
+          </div>
+
+          <div class="info-itemG">
+
+            <label for="senha">
+              <i class="fa-solid fa-lock"></i>
+              Senha
+            </label>
+
+            <input type="password" id="senha" name="senha" required>
+
+          </div>
+
+          <button type="submit" class="button-link">
+            ENTRAR
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
 
   </div>
+
+  <button class="menu-float" onclick="window.location.href='pgini.html'">
+    ←
+  </button>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const erro = params.get('erro');
+
     if (erro) {
+
       const msgErro = document.getElementById('msg-erro');
+
       if (erro === 'usuario') {
         msgErro.textContent = 'Usuário não encontrado!';
-      } else if (erro === 'senha') {
+      }
+
+      else if (erro === 'senha') {
         msgErro.textContent = 'Senha incorreta!';
       }
+
       msgErro.style.display = 'block';
-      msgErro.style.opacity = '0';
+
       requestAnimationFrame(() => {
+
         msgErro.style.opacity = '1';
+
         setTimeout(() => {
+
           msgErro.style.opacity = '0';
+
           setTimeout(() => {
+
             msgErro.style.display = 'none';
-            msgErro.textContent = '';
-          }, 1000);
+
+          }, 500);
+
         }, 3000);
+
       });
+
     }
   </script>
-  <button class="menu-float" onclick="window.location.href='pgini.html'">←</button>
 
 </body>
 </html>
